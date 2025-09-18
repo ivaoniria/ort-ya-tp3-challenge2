@@ -2,16 +2,18 @@ package com.ort.challenge2.ui.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.size
-import androidx.compose.material3.*
+import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.ort.challenge2.R
 import com.ort.challenge2.ui.theme.ShopAppTheme
-import androidx.compose.ui.graphics.Color
 
 @Composable
 fun BottomNavigationBar(selectedItem: Int, onItemSelected: (Int) -> Unit) {

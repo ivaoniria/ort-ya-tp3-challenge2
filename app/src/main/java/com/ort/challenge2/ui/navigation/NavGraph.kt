@@ -9,14 +9,14 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.ort.challenge2.ui.screens.ShopListScreen
-import com.ort.challenge2.ui.screens.LeatherBootsScreen
-import com.ort.challenge2.ui.screens.FavouritesScreen
-import com.ort.challenge2.ui.model.Product
-import com.ort.challenge2.ui.screens.SettingsScreen
-import com.ort.challenge2.ui.screens.ProfileScreen
-import com.ort.challenge2.ui.screens.MainLayoutScreen
 import com.ort.challenge2.ui.components.ChatWithManagerDialog
+import com.ort.challenge2.ui.model.Product
+import com.ort.challenge2.ui.screens.FavouritesScreen
+import com.ort.challenge2.ui.screens.LeatherBootsScreen
+import com.ort.challenge2.ui.screens.MainLayoutScreen
+import com.ort.challenge2.ui.screens.ProfileScreen
+import com.ort.challenge2.ui.screens.SettingsScreen
+import com.ort.challenge2.ui.screens.ShopListScreen
 
 @Composable
 fun AppNavGraph(
