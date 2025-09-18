@@ -1,0 +1,90 @@
+<resources>
+    <string name="app_name">Shop App</string>
+
+    <!-- TopBar -->
+    <string name="shop_list">Shop list</string>
+    <string name="menu">Menu</string>
+    <string name="profile">Profile</string>
+
+    <!-- Product -->
+    <string name="product_title">Leather boots</string>
+    <string name="product_price">27,5 $</string>
+    <string name="product_description">Great warm shoes from the artificial leather. You can buy this model only in our shop</string>
+    <string name="leather_boots">Leather boots</string>
+
+    <!-- Buttons -->
+    <string name="add_to_favourite">Add to favourite</string>
+    <string name="buy">Buy</string>
+    <string name="back">Back</string>
+
+    <!-- Bottom Navigation -->
+    <string name="nav_product">Product</string>
+    <string name="nav_search">Search</string>
+    <string name="nav_cart">Cart</string>
+    <string name="nav_profile">Profile</string>
+    <string name="nav_shop">Shop</string>
+    <string name="nav_home">Shop</string>
+
+    <!-- Favorites Screen -->
+    <string name="favourites">Favourites</string>
+    <string name="no_favorites">No tienes productos favoritos</string>
+
+    <!-- Product Details Screen -->
+    <string name="select_size">Select size</string>
+    <string name="count_of_product">Count of product</string>
+    <string name="label">Label</string>
+    <string name="input">Input</string>
+
+    <!-- Size options -->
+    <string name="size_38">38</string>
+    <string name="size_39">39</string>
+    <string name="size_40">40</string>
+    <string name="size_41">41</string>
+    <string name="size_42">42</string>
+    <string name="size_43">43</string>
+    <string name="size_44">44</string>
+
+    <!-- Added to favorites message -->
+    <string name="added_to_favorites">Added to favorites</string>
+    <string name="added_to_favorites_message">Now you can find this product at item favourites</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="ok">Ok</string>
+
+    <!-- Drawer -->
+    <string name="drawer_title">Title</string>
+    <string name="drawer_section_header">Section Header</string>
+
+    <!-- Settings Screen -->
+    <string name="settings">Settings</string>
+    <string name="account_settings">Account Settings</string>
+    <string name="edit_profile">Edit profile</string>
+    <string name="change_password">Change password</string>
+    <string name="push_notifications">Push notifications</string>
+    <string name="dark_mode">Dark mode</string>
+    <string name="more">More</string>
+    <string name="about_us">About us</string>
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="terms_and_conditions">Terms and conditions</string>
+
+    <!-- Profile Screen -->
+    <string name="martin">Martin</string>
+    <string name="ux_ui_design">UX/UI DESIGN</string>
+    <string name="email_address">E-Mail Address</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="web_site">Web Site</string>
+    <string name="password">Password</string>
+    <string name="email_placeholder">xxx@gmail.com</string>
+    <string name="phone_placeholder">+549132135</string>
+    <string name="website_placeholder">www.google.com</string>
+    <string name="password_placeholder">••••••••••••••</string>
+
+    <!-- Main Layout Screen -->
+    <string name="layout_principal">Layout Principal</string>
+    <string name="title">TITLE</string>
+
+    <!-- Order List Dialog -->
+    <string name="order_list">Order list</string>
+    <string name="order_description">There are products, which you have chosen to buy. Make the final purchase decision and place an order.</string>
+    <string name="sneakers">Sneakers</string>
+    <string name="yellow_slippers">Yellow Slippers</string>
+</resources>
