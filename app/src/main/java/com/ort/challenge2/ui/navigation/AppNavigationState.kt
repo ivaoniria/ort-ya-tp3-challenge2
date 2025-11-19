@@ -24,16 +24,13 @@ class AppNavigationState(
     private val coroutineScope: CoroutineScope,
     private val startDestination: String
 ) {
-    // Ruta actual
     var currentScreen: NavigationRoutes by mutableStateOf(NavigationRoutes.fromRoute(startDestination))
         private set
 
-    // Actualizar la pantalla actual basado en la ruta
     fun updateCurrentScreen(route: String) {
         currentScreen = NavigationRoutes.fromRoute(route)
     }
 
-    // Navegar a una pantalla
     fun navigateTo(screen: NavigationRoutes) {
         navController.navigate(screen.route) {
             popUpTo(startDestination) {
@@ -46,14 +43,12 @@ class AppNavigationState(
         closeDrawer()
     }
 
-    // Abrir drawer
     fun openDrawer() {
         coroutineScope.launch {
             drawerState.open()
         }
     }
 
-    // Cerrar drawer
     fun closeDrawer() {
         coroutineScope.launch {
             drawerState.close()
@@ -78,7 +73,6 @@ fun rememberAppNavigationState(
         )
     }
 
-    // Actualizar la pantalla actual cuando cambia la navegación
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
 

@@ -102,7 +102,7 @@ fun AppDrawer(
             modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
         )
 
-        // Shop list - usando NavigationDrawerItem estándar
+        // Shop list
         NavigationDrawerItem(
             label = { Text(text = NavigationRoutes.ShopList.title) },
             selected = currentScreen == NavigationRoutes.ShopList,
@@ -126,7 +126,7 @@ fun AppDrawer(
                 )
         )
 
-        // Favourites - usando nuestro componente personalizado
+        // Favourites
         DrawerItemWithBadge(
             title = NavigationRoutes.Favourites.title,
             iconResId = R.drawable.cua,

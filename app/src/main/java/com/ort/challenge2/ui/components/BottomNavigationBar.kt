@@ -38,9 +38,9 @@ fun BottomNavigationBar(selectedItem: Int, onItemSelected: (Int) -> Unit) {
                         painter = painterResource(item.first),
                         contentDescription = item.second,
                         modifier = if (item.first == R.drawable.shop) {
-                            Modifier.size(55.dp) // Tamaño especial solo para Shop
+                            Modifier.size(55.dp)
                         } else {
-                            Modifier.size(23.dp) // Tamaño para todos los demás
+                            Modifier.size(23.dp)
                         }
                     )
                 },

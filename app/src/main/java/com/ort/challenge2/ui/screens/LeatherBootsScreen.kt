@@ -39,14 +39,9 @@ fun LeatherBootsScreen(
     onBackClick: () -> Unit = {},
     onBuyClick: () -> Unit = {}
 ) {
-    // Obtenemos los strings fuera de la función remember
     val inputText = stringResource(R.string.input)
-
-    // Ahora usamos los valores ya resueltos
     var selectedSize by remember { mutableStateOf(inputText) }
     var productCount by remember { mutableStateOf(inputText) }
-
-    // Estado para controlar la visibilidad del diálogo
     var showOrderDialog by remember { mutableStateOf(false) }
 
     val size38 = stringResource(R.string.size_38)
@@ -122,7 +117,7 @@ fun LeatherBootsScreen(
 
                     BuyButton(
                         text = stringResource(R.string.buy),
-                        onClick = { showOrderDialog = true }, // Mostrar el diálogo
+                        onClick = { showOrderDialog = true },
                         modifier = Modifier
                             .align(Alignment.CenterEnd)
                             .padding(start = 8.dp)
@@ -133,14 +128,12 @@ fun LeatherBootsScreen(
         }
     }
 
-    // Mostrar el diálogo de Order List cuando se hace clic en Buy
     OrderListDialog(
         showDialog = showOrderDialog,
         onDismiss = { showOrderDialog = false },
         onBuyClick = {
-            // Procesar la compra, cerrar el diálogo y volver atrás
             showOrderDialog = false
-            onBuyClick() // Mantener el comportamiento original (volver atrás)
+            onBuyClick()
         },
         onBackClick = { showOrderDialog = false }
     )

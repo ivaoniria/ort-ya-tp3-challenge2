@@ -24,10 +24,8 @@ fun AppNavGraph(
     modifier: Modifier = Modifier,
     onMenuClick: () -> Unit
 ) {
-    // Estado para mostrar u ocultar el diálogo de chat
     var showChatDialog by remember { mutableStateOf(false) }
 
-    // Mostrar diálogo de chat si está activo
     if (showChatDialog) {
         ChatWithManagerDialog(
             showDialog = true,
@@ -35,7 +33,6 @@ fun AppNavGraph(
         )
     }
 
-    // Función común para mostrar el diálogo de chat
     val showChat = {
         showChatDialog = true
     }
@@ -45,7 +42,6 @@ fun AppNavGraph(
         startDestination = NavigationRoutes.MainLayout.route,
         modifier = modifier
     ) {
-        // Pantalla principal al iniciar la app
         composable(NavigationRoutes.MainLayout.route) {
             MainLayoutScreen(
                 onMenuClick = onMenuClick,

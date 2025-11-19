@@ -25,9 +25,9 @@ fun BuyButton(
     Button(
         onClick = onClick,
         colors = ButtonDefaults.buttonColors(
-            containerColor = Color(0xFF8B4513) // Color marrón
+            containerColor = Color(0xFF8B4513)
         ),
-        shape = RoundedCornerShape(50), // Bordes completamente redondeados
+        shape = RoundedCornerShape(50),
         modifier = modifier
     ) {
         if (showPlusIcon) {
@@ -39,8 +39,8 @@ fun BuyButton(
                     text = "+",
                     color = Color.White
                 )
-                // Aumentamos el espacio entre "+" y "Buy"
-                Spacer(modifier = Modifier.width(16.dp)) // Aumentado de 8.dp a 16.dp
+
+                Spacer(modifier = Modifier.width(16.dp))
                 Text(
                     text = text,
                     color = Color.White

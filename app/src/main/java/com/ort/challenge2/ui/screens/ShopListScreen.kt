@@ -5,6 +5,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import com.ort.challenge2.R
 import com.ort.challenge2.ui.components.BottomNavigationBar
@@ -22,25 +23,25 @@ fun ShopListScreen(
     onNavigateToFavourites: () -> Unit = {},
     onShowChatPopup: () -> Unit = {}
 ) {
-    // Lista de productos de ejemplo para mostrar
-    val products = FavoritesManager.sampleProducts
+    val context = LocalContext.current
+    val products = FavoritesManager.getSampleProducts(context)
 
     Scaffold(
         topBar = {
             ShopTopBar(
                 titleResId = R.string.shop_list,
                 onMenuClick = onMenuClick,
-                onProfileClick = onNavigateToProfile // Redirige a ProfileScreen
+                onProfileClick = onNavigateToProfile
             )
         },
         bottomBar = {
             BottomNavigationBar(selectedItem = 1, onItemSelected = { index ->
                 when (index) {
-                    0 -> onNavigateToMainLayout() // Botón 1: MainLayoutScreen
-                    1 -> {} // Ya estamos en ShopListScreen
-                    2 -> onShowChatPopup() // Botón 3: Muestra el popup de Chat
-                    3 -> onNavigateToFavourites() // Botón 4: FavouritesScreen
-                    4 -> onNavigateToProfile() // Botón 5: ProfileScreen
+                    0 -> onNavigateToMainLayout()
+                    1 -> {}
+                    2 -> onShowChatPopup()
+                    3 -> onNavigateToFavourites()
+                    4 -> onNavigateToProfile()
                 }
             })
         }
@@ -53,7 +54,6 @@ fun ShopListScreen(
                     description = product.description,
                     imageResId = product.imageResId,
                     onFavouriteClick = {
-                        // CONECTAR: Añadir el producto a favoritos cuando se hace clic
                         FavoritesManager.addToFavorites(product)
                     },
                     onBuyClick = onBuyClick,

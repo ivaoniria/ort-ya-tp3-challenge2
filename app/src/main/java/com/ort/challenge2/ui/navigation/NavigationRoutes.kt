@@ -17,7 +17,7 @@ sealed class NavigationRoutes(val route: String, val title: String) {
                 Profile.route -> Profile
                 Settings.route -> Settings
                 ProductDetail.route -> ProductDetail
-                else -> MainLayout // Cambio el default a MainLayout
+                else -> MainLayout
             }
         }
 

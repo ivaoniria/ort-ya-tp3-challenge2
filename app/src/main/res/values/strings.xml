@@ -87,4 +87,15 @@
     <string name="order_description">There are products, which you have chosen to buy. Make the final purchase decision and place an order.</string>
     <string name="sneakers">Sneakers</string>
     <string name="yellow_slippers">Yellow Slippers</string>
+
+    <!-- Chat with Manager Dialog -->
+    <string name="chat_with_manager">Chat with manager</string>
+    <string name="chat_manager_greeting">Hello, my name is Alex, please write your question below here.</string>
+    <string name="chat_message_placeholder">Type your message...</string>
+    <string name="send">Send</string>
+
+    <!-- Sample Products -->
+    <string name="sample_product_title">Leather boots</string>
+    <string name="sample_product_price">27,5 $</string>
+    <string name="sample_product_description">Great warm shoes from the artificial leather. You can buy this model only in our shop</string>
 </resources>

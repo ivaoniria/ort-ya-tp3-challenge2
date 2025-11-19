@@ -38,19 +38,15 @@ fun ProductCard(
     onBuyClick: () -> Unit,
     isFavorite: Boolean = false
 ) {
-    // Estado para controlar la visibilidad del diálogo de confirmación
     var showAddToFavouritesDialog by remember { mutableStateOf(false) }
 
-    // Diálogo de confirmación - Lo movemos fuera de la Card para evitar problemas de composición
     if (showAddToFavouritesDialog) {
         AddedToFavouritesDialog(
             showDialog = true,
             onDismiss = {
-                // Si el usuario descarta, simplemente cerramos el diálogo sin añadir a favoritos
                 showAddToFavouritesDialog = false
             },
             onConfirm = {
-                // Si el usuario confirma, añadimos a favoritos y cerramos el diálogo
                 onFavouriteClick()
                 showAddToFavouritesDialog = false
             }
@@ -85,7 +81,6 @@ fun ProductCard(
                     OutlinedActionButton(
                         text = if (isFavorite) stringResource(R.string.added_to_favorites) else stringResource(id = R.string.add_to_favourite),
                         onClick = {
-                            // Mostrar el diálogo solo si no está ya en favoritos
                             if (!isFavorite) {
                                 showAddToFavouritesDialog = true
                             }

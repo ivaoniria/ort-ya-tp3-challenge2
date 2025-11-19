@@ -59,7 +59,6 @@ fun FavouritesScreen(
     onNavigateToProfile: () -> Unit = {},
     onShowChatPopup: () -> Unit = {}
 ) {
-    // Estado para controlar la visibilidad del diálogo
     var showOrderDialog by remember { mutableStateOf(false) }
 
     Scaffold(
@@ -67,17 +66,17 @@ fun FavouritesScreen(
             ShopTopBar(
                 titleResId = R.string.favourites,
                 onMenuClick = onMenuClick,
-                onProfileClick = onNavigateToProfile // Redirige a ProfileScreen
+                onProfileClick = onNavigateToProfile
             )
         },
         bottomBar = {
             BottomNavigationBar(selectedItem = 3, onItemSelected = { index ->
                 when (index) {
-                    0 -> onNavigateToMainLayout() // Botón 1: MainLayoutScreen
-                    1 -> onNavigateToShop() // Botón 2: ShopListScreen
-                    2 -> onShowChatPopup() // Botón 3: Muestra el popup de Chat
-                    3 -> {} // Ya estamos en FavouritesScreen
-                    4 -> onNavigateToProfile() // Botón 5: ProfileScreen
+                    0 -> onNavigateToMainLayout()
+                    1 -> onNavigateToShop()
+                    2 -> onShowChatPopup()
+                    3 -> {}
+                    4 -> onNavigateToProfile()
                 }
             })
         },
@@ -90,7 +89,6 @@ fun FavouritesScreen(
                 .background(Color(0xFFFFF5F5))
         ) {
             if (FavoritesManager.favorites.isEmpty()) {
-                // Mostrar mensaje si no hay favoritos
                 Text(
                     text = stringResource(R.string.no_favorites),
                     modifier = Modifier
@@ -101,7 +99,6 @@ fun FavouritesScreen(
                     color = Color.Gray
                 )
             } else {
-                // Mostrar la lista de favoritos
                 LazyColumn(
                     modifier = Modifier.fillMaxSize(),
                     contentPadding = PaddingValues(vertical = 8.dp, horizontal = 16.dp)
@@ -114,13 +111,11 @@ fun FavouritesScreen(
                         )
                     }
 
-                    // Espacio extra al final para que el botón flotante no tape ningún elemento
                     item {
                         Spacer(modifier = Modifier.height(80.dp))
                     }
                 }
 
-                // Si hay favoritos, mostrar el botón de comprar con el signo +
                 if (FavoritesManager.favorites.isNotEmpty()) {
                     BuyButton(
                         text = stringResource(id = R.string.buy),
@@ -129,21 +124,18 @@ fun FavouritesScreen(
                             .align(Alignment.BottomCenter)
                             .padding(16.dp)
                             .width(100.dp),
-                        showPlusIcon = true // Mostrar el signo +
+                        showPlusIcon = true
                     )
                 }
             }
         }
     }
 
-    // Mostrar el diálogo de Order List cuando se hace clic en Buy
     OrderListDialog(
         showDialog = showOrderDialog,
         onDismiss = { showOrderDialog = false },
         onBuyClick = {
-            // Procesar la compra y cerrar el diálogo
             showOrderDialog = false
-            // Aquí podrías implementar la lógica adicional de compra
         },
         onBackClick = { showOrderDialog = false }
     )
@@ -165,7 +157,6 @@ fun FavoriteItemCard(
                 .padding(8.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            // Número de orden en un círculo
             Box(
                 contentAlignment = Alignment.Center,
                 modifier = Modifier
@@ -215,9 +206,9 @@ fun FavoriteItemCard(
 @Preview(showBackground = true)
 @Composable
 fun FavouritesScreenPreview() {
+    val context = androidx.compose.ui.platform.LocalContext.current
     Challenge2Theme {
-        // Añadir productos de ejemplo para la previsualización
-        for (product in FavoritesManager.sampleProducts) {
+        for (product in FavoritesManager.getSampleProducts(context)) {
             FavoritesManager.addToFavorites(product)
         }
         FavouritesScreen()

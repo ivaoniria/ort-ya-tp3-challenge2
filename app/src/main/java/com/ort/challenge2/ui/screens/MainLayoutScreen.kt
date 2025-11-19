@@ -35,19 +35,19 @@ fun MainLayoutScreen(
             ShopTopBar(
                 titleResId = R.string.title,
                 onMenuClick = onMenuClick,
-                onProfileClick = onNavigateToProfile // Redirige a ProfileScreen
+                onProfileClick = onNavigateToProfile
             )
         },
         bottomBar = {
             BottomNavigationBar(
-                selectedItem = 0, // Primer botón seleccionado por defecto (product)
+                selectedItem = 0,
                 onItemSelected = { index ->
                     when (index) {
-                        0 -> {} // Ya estamos en MainLayoutScreen
-                        1 -> onNavigateToShop() // Botón 2: ShopListScreen
-                        2 -> onShowChatPopup() // Botón 3: Muestra el popup de Chat
-                        3 -> onNavigateToFavourites() // Botón 4: FavouritesScreen
-                        4 -> onNavigateToProfile() // Botón 5: ProfileScreen
+                        0 -> {}
+                        1 -> onNavigateToShop()
+                        2 -> onShowChatPopup()
+                        3 -> onNavigateToFavourites()
+                        4 -> onNavigateToProfile()
                     }
                 }
             )
@@ -58,7 +58,7 @@ fun MainLayoutScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(padding)
-                .background(Color(0xFFFFF5F5)), // Color rosa claro como en la imagen
+                .background(Color(0xFFFFF5F5)),
             contentAlignment = Alignment.Center
         ) {
             Text(

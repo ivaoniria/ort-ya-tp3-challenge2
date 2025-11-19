@@ -75,7 +75,7 @@ fun ProfileScreen(
                     }
                 },
                 actions = {
-                    IconButton(onClick = { /* Ya estamos en ProfileScreen */ }) {
+                    IconButton(onClick = { }) {
                         Icon(
                             painter = painterResource(id = R.drawable.trailing_icon),
                             contentDescription = stringResource(R.string.profile),
@@ -88,11 +88,11 @@ fun ProfileScreen(
         bottomBar = {
             BottomNavigationBar(selectedItem = 4, onItemSelected = { index ->
                 when (index) {
-                    0 -> onNavigateToMainLayout() // Botón 1: MainLayoutScreen
-                    1 -> onNavigateToShop() // Botón 2: ShopListScreen
-                    2 -> onShowChatPopup() // Botón 3: Muestra el popup de Chat
-                    3 -> onNavigateToFavourites() // Botón 4: FavouritesScreen
-                    4 -> {} // Ya estamos en ProfileScreen
+                    0 -> onNavigateToMainLayout()
+                    1 -> onNavigateToShop()
+                    2 -> onShowChatPopup()
+                    3 -> onNavigateToFavourites()
+                    4 -> {}
                 }
             })
         },
@@ -113,7 +113,7 @@ fun ProfileScreen(
             Box(
                 contentAlignment = Alignment.BottomEnd
             ) {
-                // Profile Image - llenar más el círculo
+                // Profile Image
                 Image(
                     painter = painterResource(id = R.drawable.profile_image),
                     contentDescription = stringResource(R.string.profile),
@@ -124,7 +124,7 @@ fun ProfileScreen(
                         .background(Color.Gray.copy(alpha = 0.3f))
                 )
 
-                // Edit Button (lapiz) - sin fondo
+                // Edit Button (lapiz)
                 Image(
                     painter = painterResource(id = R.drawable.lapiz),
                     contentDescription = "Edit",
@@ -166,7 +166,7 @@ fun ProfileScreen(
                 value = phoneValue,
                 placeholder = stringResource(R.string.phone_placeholder),
                 onValueChange = { phoneValue = it },
-                iconResId = R.drawable.home, // Usando home icon para phone
+                iconResId = R.drawable.home,
                 modifier = Modifier.padding(bottom = 16.dp)
             )
 
@@ -175,7 +175,7 @@ fun ProfileScreen(
                 value = websiteValue,
                 placeholder = stringResource(R.string.website_placeholder),
                 onValueChange = { websiteValue = it },
-                iconResId = R.drawable.search, // Usando search icon para website
+                iconResId = R.drawable.search,
                 modifier = Modifier.padding(bottom = 16.dp)
             )
 
@@ -184,7 +184,7 @@ fun ProfileScreen(
                 value = passwordValue,
                 placeholder = stringResource(R.string.password_placeholder),
                 onValueChange = { passwordValue = it },
-                iconResId = R.drawable.bag, // Usando bag icon para password
+                iconResId = R.drawable.bag,
                 isPassword = true,
                 modifier = Modifier.padding(bottom = 32.dp)
             )

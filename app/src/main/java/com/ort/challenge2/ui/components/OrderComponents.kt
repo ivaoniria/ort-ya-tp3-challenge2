@@ -61,12 +61,10 @@ fun CheckableItem(
             .padding(vertical = 8.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        // Contenido a la izquierda (por ejemplo, un número en círculo)
         Box(modifier = Modifier.padding(end = 16.dp)) {
             leadingContent()
         }
 
-        // Título del producto
         Text(
             text = title,
             fontSize = 16.sp,
@@ -75,7 +73,6 @@ fun CheckableItem(
             modifier = Modifier.weight(1f)
         )
 
-        // Checkbox
         Checkbox(
             checked = isSelected,
             onCheckedChange = onSelectionChanged,

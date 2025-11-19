@@ -30,7 +30,6 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun AppContent() {
-    // Crear y recordar el estado de navegación centralizado
     val navigationState = rememberAppNavigationState()
 
     ModalNavigationDrawer(

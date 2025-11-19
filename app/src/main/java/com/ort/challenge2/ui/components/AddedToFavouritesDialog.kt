@@ -39,7 +39,7 @@ fun AddedToFavouritesDialog(
                     .padding(16.dp),
                 shape = RoundedCornerShape(16.dp),
                 colors = CardDefaults.cardColors(
-                    containerColor = Color(0xFFFFF8F0) // Color beige claro como en la imagen
+                    containerColor = Color(0xFFFFF8F0)
                 )
             ) {
                 Column(
@@ -50,7 +50,7 @@ fun AddedToFavouritesDialog(
                 ) {
                     // Icono de documento
                     Image(
-                        painter = painterResource(id = R.drawable.trailing_icon), // Usar documento genérico disponible
+                        painter = painterResource(id = R.drawable.trailing_icon),
                         contentDescription = null,
                         modifier = Modifier
                             .size(24.dp)
@@ -82,14 +82,14 @@ fun AddedToFavouritesDialog(
                         TextButton(onClick = onDismiss) {
                             Text(
                                 text = stringResource(R.string.dismiss),
-                                color = Color(0xFF8B4513) // Color marrón
+                                color = Color(0xFF8B4513)
                             )
                         }
 
                         TextButton(onClick = onConfirm) {
                             Text(
                                 text = stringResource(R.string.ok),
-                                color = Color(0xFF8B4513) // Color marrón
+                                color = Color(0xFF8B4513)
                             )
                         }
                     }
